@@ -1,3 +1,6 @@
 [submodule "common/mist-modules"]
 	path = common/components/mist-modules
 	url = https://github.com/mist-devel/mist-modules.git
+[submodule "demistify/DeMiSTify"]
+	path = demistify/DeMiSTify
+	url = https://github.com/somhi/DeMiSTify
