@@ -1,10 +1,10 @@
 module poseidon_top (
 	input         CLOCK_50,
-
 	output        LED,
-	output [5:0]  VGA_R,
-	output [5:0]  VGA_G,
-	output [5:0]  VGA_B,
+
+	output  [5:0] VGA_R,
+	output  [5:0] VGA_G,
+	output  [5:0] VGA_B,
 	output        VGA_HS,
 	output        VGA_VS,
 
@@ -14,7 +14,6 @@ module poseidon_top (
 	input         SPI_SS2,    // data_io
 	input         SPI_SS3,    // OSD
 	input         CONF_DATA0, // SPI_SS for user_io
-
 `ifndef NO_DIRECT_UPLOAD
 	input         SPI_SS4,
 `endif
@@ -46,10 +45,27 @@ module poseidon_top (
 );
 
 
+`ifdef USE_PLL_50_27
+wire CLOCK_27;
+wire pll_lock;
+pll_50_27 u_pll_50_27 (
+	.inclk0 ( CLOCK_50 ),
+	.c0     ( CLOCK_27 ),
+	.locked ( pll_lock )
+);
+`endif
+
+
 `GUEST_TOP guest
 (
- .CLOCK_27  (CLOCK_50),
- .LED      	(~LED),
+`ifdef USE_PLL_50_27
+ 	.CLOCK_27	(CLOCK_27),
+`else
+ 	.CLOCK_27	(CLOCK_50),
+`endif
+`ifdef USE_CLOCK_50
+ 	.CLOCK_50 	(CLOCK_50),
+`endif
 
  .SDRAM_DQ	(SDRAM_DQ),	
  .SDRAM_A	(SDRAM_A),
@@ -73,9 +89,6 @@ module poseidon_top (
  .SPI_SS4	(SPI_SS4),
  `endif
  
- // AUDIO
- .AUDIO_L   (AUDIO_L),
- .AUDIO_R   (AUDIO_R),
  .I2S_BCK	(I2S_BCK),
  .I2S_LRCK	(I2S_LRCK),
  .I2S_DATA	(I2S_DATA),

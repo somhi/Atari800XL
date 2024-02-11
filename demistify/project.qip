@@ -13,16 +13,6 @@ set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) ../mist/nts
 set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) ../mist/video_pll_reconfig.qip]
 set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) ../mist/pal_rom.qip]
 
-# Comparación entre ficheros target mist de este repo con los del repo de la versión antinua para neptuno
-#
-#idem # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) pll_pal.qip]
-#idem # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) pll_downstream_pal.qip]
-#DIFERENTE # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) video_pll_reconfig.qip]
-#idem # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) ../mist/clkctrl.qip]
-#idem # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) pll_reconfig.qip]
-#NO EXISTE # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) pal_rom.qip]
-#NO EXISTE # set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) ntsc_rom.qip]
-
 set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) ../common/a8core/atari5200core.vhd]
 set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) ../common/a8core/atari5200core_simplesdram.vhd]
 set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) ../common/a8core/atari800core.vhd]
