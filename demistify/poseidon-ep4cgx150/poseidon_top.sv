@@ -44,6 +44,7 @@ module poseidon_top (
 	output        UART_TX
 );
 
+wire   act_led;
 
 `ifdef USE_PLL_50_27
 wire CLOCK_27;
@@ -67,8 +68,12 @@ pll_50_27 u_pll_50_27 (
 //  	.CLOCK_50 	(CLOCK_50),
 // `endif
 
-	.*
+	 .LED       (act_led),
 
- );
+ 	.*
+
+);
+
+assign LED = ~act_led;
 
 endmodule
