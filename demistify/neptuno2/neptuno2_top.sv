@@ -1,10 +1,13 @@
-module poseidon_top (
+module neptuno2_top (
 	input         CLOCK_50,
-	output        LED,
+	input         KEY0,
+	input         KEY1,
+	output        LED1,
+ // output        LED2,
 
-	output  [5:0] VGA_R,
-	output  [5:0] VGA_G,
-	output  [5:0] VGA_B,
+	output  [7:0] VGA_R,
+	output  [7:0] VGA_G,
+	output  [7:0] VGA_B,
 	output        VGA_HS,
 	output        VGA_VS,
 
@@ -42,8 +45,24 @@ module poseidon_top (
 `endif
 	input         UART_RX,
 	output        UART_TX
+
+	// output        SD_CS,
+	// output        SD_SCK,
+	// output        SD_MOSI,
+	// input         SD_MISO,
+	
+	// inout 		  PS2_KEYBOARD_CLK,
+	// inout	      PS2_KEYBOARD_DAT,
+	// inout	      PS2_MOUSE_CLK,
+	// inout	      PS2_MOUSE_DAT,
+	
+    // output        JOY_CLK,
+	// output        JOY_LOAD,
+	// input         JOY_DATA,
+	// output        JOY_SEL
 );
 
+wire   LED;
 
 `ifdef USE_PLL_50_27
 wire CLOCK_27;
@@ -67,8 +86,10 @@ pll_50_27 u_pll_50_27 (
 //  	.CLOCK_50 	(CLOCK_50),
 // `endif
 
-	.*
+ 	.*
 
- );
+);
+
+assign LED1 = ~LED;
 
 endmodule

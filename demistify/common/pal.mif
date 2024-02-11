@@ -18,7 +18,7 @@
 --    Device Speed Grade: 8
 --    PLL Scan Chain: Cyclone III GX GPLL (144 bits)
 --    File Name: /home/jordi/Documents/Coding/FPGA/Deca_17/_A_WIP/Atari800XL/demistify/poseidon-ep4cgx150/pal.mif
---    Generated: Sun Feb 11 01:54:31 2024
+--    Generated: Sun Feb 11 18:25:03 2024
 
 WIDTH=1;
 DEPTH=144;
@@ -36,7 +36,7 @@ CONTENT BEGIN
 	6    :   0;
 	7    :   0;
 	8    :   0;
-	9    :   1; -- VCO Post Scale = 1 (1 bit(s)) (VCO post-scale divider counter value = 1)
+	9    :   0; -- VCO Post Scale = 0 (1 bit(s)) (VCO post-scale divider counter value = 2)
 	10   :   0; -- Reserved Bits = 0 (5 bit(s))
 	11   :   0;
 	12   :   0;
@@ -46,58 +46,58 @@ CONTENT BEGIN
 	16   :   0;
 	17   :   1;
 	18   :   0; -- N counter: Bypass = 0 (1 bit(s))
-	19   :   0; -- N counter: High Count = 5 (8 bit(s))
+	19   :   0; -- N counter: High Count = 4 (8 bit(s))
 	20   :   0;
 	21   :   0;
 	22   :   0;
 	23   :   0;
 	24   :   1;
 	25   :   0;
-	26   :   1;
+	26   :   0;
 	27   :   0; -- N counter: Odd Division = 0 (1 bit(s))
-	28   :   0; -- N counter: Low Count = 5 (8 bit(s))
+	28   :   0; -- N counter: Low Count = 4 (8 bit(s))
 	29   :   0;
 	30   :   0;
 	31   :   0;
 	32   :   0;
 	33   :   1;
 	34   :   0;
-	35   :   1;
+	35   :   0;
 	36   :   0; -- M counter: Bypass = 0 (1 bit(s))
-	37   :   0; -- M counter: High Count = 114 (8 bit(s))
-	38   :   1;
+	37   :   0; -- M counter: High Count = 52 (8 bit(s))
+	38   :   0;
 	39   :   1;
 	40   :   1;
 	41   :   0;
-	42   :   0;
-	43   :   1;
+	42   :   1;
+	43   :   0;
 	44   :   0;
 	45   :   1; -- M counter: Odd Division = 1 (1 bit(s))
-	46   :   0; -- M counter: Low Count = 113 (8 bit(s))
-	47   :   1;
+	46   :   0; -- M counter: Low Count = 51 (8 bit(s))
+	47   :   0;
 	48   :   1;
 	49   :   1;
 	50   :   0;
 	51   :   0;
-	52   :   0;
+	52   :   1;
 	53   :   1;
 	54   :   0; -- clk0 counter: Bypass = 0 (1 bit(s))
-	55   :   0; -- clk0 counter: High Count = 20 (8 bit(s))
+	55   :   0; -- clk0 counter: High Count = 11 (8 bit(s))
 	56   :   0;
 	57   :   0;
-	58   :   1;
-	59   :   0;
-	60   :   1;
-	61   :   0;
-	62   :   0;
-	63   :   0; -- clk0 counter: Odd Division = 0 (1 bit(s))
-	64   :   0; -- clk0 counter: Low Count = 20 (8 bit(s))
+	58   :   0;
+	59   :   1;
+	60   :   0;
+	61   :   1;
+	62   :   1;
+	63   :   1; -- clk0 counter: Odd Division = 1 (1 bit(s))
+	64   :   0; -- clk0 counter: Low Count = 10 (8 bit(s))
 	65   :   0;
 	66   :   0;
-	67   :   1;
-	68   :   0;
-	69   :   1;
-	70   :   0;
+	67   :   0;
+	68   :   1;
+	69   :   0;
+	70   :   1;
 	71   :   0;
 	72   :   1; -- clk1 counter: Bypass = 1 (1 bit(s))
 	73   :   0; -- clk1 counter: High Count = 0 (8 bit(s))

@@ -1,6 +1,6 @@
 set_global_assignment -name VERILOG_FILE  [file join $::quartus(qip_path) defs.v]
 set_global_assignment -name VERILOG_FILE  [file join $::quartus(qip_path) ../defs_demistify.v]
 set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) constraints.sdc]
-set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "poseidon_top.sv"]
+set_global_assignment -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "neptuno2_top.sv"]
 set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) ../common/pll_pal.vhd]
 set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) ../common/pll_reconfig.vhd]
